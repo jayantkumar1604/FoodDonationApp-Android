@@ -1,5 +1,6 @@
 package com.foodwaste.app;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,7 +17,7 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
 
     EditText etDonor, etFood, etQty, etLocation, etExpiry;
-    Button btnDonate;
+    Button btnDonate, btnReceiver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +30,9 @@ public class MainActivity extends AppCompatActivity {
         etLocation = findViewById(R.id.etLocation);
         etExpiry = findViewById(R.id.etExpiry);
         btnDonate = findViewById(R.id.btnDonate);
+        btnReceiver = findViewById(R.id.btnReceiver);
 
+        // Donor submits food
         btnDonate.setOnClickListener(v -> {
 
             FoodDonation food = new FoodDonation(
@@ -60,6 +63,10 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         });
+
+        // Navigate to Receiver / NGO page
+        btnReceiver.setOnClickListener(v -> {
+            startActivity(new Intent(MainActivity.this, ReceiverActivity.class));
+        });
     }
 }
-
