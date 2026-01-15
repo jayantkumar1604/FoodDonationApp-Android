@@ -127,3 +127,10 @@ Donation Successful
 
 
 Check backend / database for new entry
+
+
+👨‍💻 Author
+
+Jayant Kumar
+9162802720
+jayantkumar1604@gmail.com
